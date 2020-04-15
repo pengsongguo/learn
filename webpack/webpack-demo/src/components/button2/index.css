@@ -1,0 +1,12 @@
+:local(.btn) {
+    display: block;
+    width: 70px;
+    height: 30px;
+    padding: 0 10px;
+    background-color: #eb1d17;
+    color: #ffffff;
+    border-radius: 50px;
+    line-height: 30px;
+    text-align: center;
+    margin: 6px;
+}
