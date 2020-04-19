@@ -1,0 +1,10 @@
+.btn {
+    width: 60px;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    background-color: #2b81af;
+    color: #ffffff;
+    margin: 10px;
+    transform: translate(10px);
+}
