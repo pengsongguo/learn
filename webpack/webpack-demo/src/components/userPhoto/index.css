@@ -3,7 +3,8 @@
   height: 50px;
   border-radius: 300px;
   overflow: hidden;
-  background-color: #fff; }
+  background-color: #fff;
+  transform: translate(40px, 40px); }
   .user .photo {
     display: block;
     width: 100%;
