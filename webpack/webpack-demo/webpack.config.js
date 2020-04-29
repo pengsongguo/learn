@@ -30,6 +30,11 @@ module.exports = {
             {
                 test: /\.(scss|sass)$/,
                 use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"]
+            },
+            {
+                test:/\.js$/,
+                exclude:/mode_modules/,
+                loader:'babel-loader'
             }
         ]
     },
