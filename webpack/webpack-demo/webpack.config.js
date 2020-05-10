@@ -10,6 +10,9 @@ module.exports = {
         path: path.resolve(__dirname, 'dist')
     },
     devtool: 'cheap-module-eval-source-map',
+    devServer:{
+      contentBase:'./dist'
+    },
     module: {
         rules: [
             {
@@ -30,7 +33,7 @@ module.exports = {
             }
         ]
     },
-    plugins: [new HtmlWebpackPlugin({
-        template: './template.html'
-    }), new CleanWebpackPlugin(),]
+    plugins: [ new CleanWebpackPlugin(),new HtmlWebpackPlugin({
+        template:'./template.html'
+    })]
 }
