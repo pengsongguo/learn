@@ -1,16 +1,17 @@
 import _ from 'lodash';
-import './style.css';
-import pic from './longmao.jpg'
+import printMe from "./print";
 
 function component() {
     // 创建一个div
     var element = document.createElement('div');
+    //创建一个按钮
+    var btn = document.createElement('button');
+    btn.innerHTML = 'Click me and check the console!';
     element.innerHTML = _.join(['Hello', 'world'], ' ');
-    element.classList.add('hello');
-    // 创建一个img
-    var img = new Image();
-    img.src = pic;
-    element.appendChild(img);
+
+    btn.onclick = printMe;
+    element.appendChild(btn);
+
     return element;
 }
 
