@@ -15,5 +15,5 @@ module.exports = {
     plugins: [new htmlWebpackPlugin({
         template: './index.html',
         title: 'tree shaking'
-    }), new CleanWebpackPlugin()]
+    }), new CleanWebpackPlugin() ]
 }

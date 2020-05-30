@@ -1,0 +1,9 @@
+#button {
+    padding: 4px 10px;
+    border-radius: 2px;
+    font-size: 18px;
+    line-height: 26px;
+    background-color: skyblue;
+    color: #ce0023;
+    border: none;
+}
