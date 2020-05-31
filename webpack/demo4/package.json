@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "production和development模式区别",
   "private": true,
+  "main": "webpack.config.js",
+  "sideEffects": [
+    "*.css",
+    "*.scss"
+  ],
   "dependencies": {
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11"
@@ -20,10 +25,13 @@
     "postcss-loader": "^3.0.0",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.2.1",
-    "url-loader": "^4.1.0"
+    "url-loader": "^4.1.0",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^4.2.2"
   },
   "scripts": {
-    "build": "webpack app.js"
+    "build": "webpack --config webpack.prod.js",
+    "start": "webpack-dev-server --open --config webpack.dev.js"
   },
   "author": "",
   "license": "ISC",

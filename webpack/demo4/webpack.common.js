@@ -1,4 +1,4 @@
-// webpack配置文件
+// webpack公共配置文件
 
 const path = require('path');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
@@ -10,8 +10,6 @@ module.exports = {
         filename: 'bundle.js',
         path: path.resolve(__dirname, './dist')
     },
-    mode: 'development',
-    devtool: 'cheap-module-eval-source-map',
     module: {
         rules: [
             {
@@ -36,8 +34,7 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(),
         new htmlWebpackPlugin({
-            title: 'webpack学习',
-            filename: 'assets/learn.html',
+            title: 'Development',
             template: './template.html'
         })
     ],
