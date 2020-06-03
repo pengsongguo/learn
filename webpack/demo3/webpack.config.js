@@ -13,7 +13,7 @@ module.exports = {
         rules: []
     },
     plugins: [new htmlWebpackPlugin({
-        template: './index.html',
+        template: './template.html',
         title: 'tree shaking'
     }), new CleanWebpackPlugin() ]
 }
