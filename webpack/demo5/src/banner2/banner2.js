@@ -1,13 +1,12 @@
-import Swiper from 'swiper';
 import './banner2.scss'
 
 
 export default () => {
-    const root_DOM = document.getElementById('root');
-    const DOM1 = document.createElement('div');
 
-
-    let tmp = `<div id="banner2">
+    return import(/* webpackChunkName:"swiper" */ 'swiper').then(Swiper => {
+        const root_DOM = document.getElementById('root');
+        const DOM1 = document.createElement('div');
+        let tmp = `<div id="banner2">
     <div class="swiper-wrapper">
         <div class="swiper-slide">
         <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1591198397107&di=ada88dbbde99fc7129fd82e7411ef6ae&imgtype=0&src=http%3A%2F%2Fdpic.tiankong.com%2F90%2Fsh%2FQJ8803090964.jpg" alt="">
@@ -19,12 +18,12 @@ export default () => {
     </div>
 
 </div>`
+        root_DOM.appendChild(DOM1);
+        DOM1.innerHTML = tmp;
 
-    root_DOM.appendChild(DOM1);
-    DOM1.innerHTML = tmp;
-
-    var mySwiper = new Swiper('#banner2', {
-        direction: 'vertical', // 垂直切换选项
-        loop: true, // 循环模式选项
-    });
+        var mySwiper = new Swiper('#banner2', {
+            direction: 'vertical', // 垂直切换选项
+            loop: true, // 循环模式选项
+        });
+    }).catch(err => console.log(err));
 }
