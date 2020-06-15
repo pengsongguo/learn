@@ -1,0 +1,11 @@
+.button {
+    background-color: skyblue;
+    color: #fff;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    border: none;
+}
