@@ -1,5 +1,3 @@
-# 代码分离 code split
+# 代码分割
 
-## 入口分离
-## 防止重复
-## 动态导入
+## splitchunksplugin
