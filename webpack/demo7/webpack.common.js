@@ -8,14 +8,7 @@ module.exports = {
         filename: 'bundle.js',
         path: path.resolve(__dirname, './dist')
     },
-    mode: 'production',
-    devServer: {
-        contentBase: './dist'
-    },
-    devtool: 'cheap-module-eval-source-map',
-    plugins: [new htmlWebpackPlugin({
-        template: './template.html'
-    }), new CleanWebpackPlugin()],
+
     module: {
         rules: [{
             test: /\.js$/,
