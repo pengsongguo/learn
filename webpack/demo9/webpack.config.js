@@ -7,7 +7,34 @@ module.exports = {
         filename: 'bundle.js',
         path: path.resolve(__dirname, './dist')
     },
+    mode: 'production',
+    devtool: 'cheap-module-eval-source-map',
+    devServer: {
+        contentBase: './dist'
+    },
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader', 'postcss-loader']
+            },
+            {
+                test: /\.(scss|sass)$/,
+                use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
+            },
+            {
+                test: /\.(jpg|jpeg|png|gif)$/,
+                use: ['file-loader']
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: 'babel-loader'
+            }
+        ]
+    },
     plugins: [new htmlWebpackPlugin({
+        title: '',
         template: './template.html'
     }), new CleanWebpackPlugin()]
 };
