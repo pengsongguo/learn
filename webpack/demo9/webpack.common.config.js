@@ -7,11 +7,6 @@ module.exports = {
         filename: 'bundle.js',
         path: path.resolve(__dirname, './dist')
     },
-    mode: 'production',
-    devtool: 'cheap-module-eval-source-map',
-    devServer: {
-        contentBase: './dist'
-    },
     module: {
         rules: [
             {
@@ -32,9 +27,5 @@ module.exports = {
                 loader: 'babel-loader'
             }
         ]
-    },
-    plugins: [new htmlWebpackPlugin({
-        title: '',
-        template: './template.html'
-    }), new CleanWebpackPlugin()]
+    }
 };

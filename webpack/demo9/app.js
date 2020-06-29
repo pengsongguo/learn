@@ -8,4 +8,5 @@ import {jqueryDemo} from './src/components/jquery/jqueryDemo';
 Button();
 Button(2);
 UserPhoto();
-// banner();
+banner();
+jqueryDemo();
