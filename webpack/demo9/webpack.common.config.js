@@ -1,6 +1,7 @@
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+
 module.exports = {
     entry: './app.js',
     output: {
@@ -27,5 +28,9 @@ module.exports = {
                 loader: 'babel-loader'
             }
         ]
-    }
+    },
+    plugins: [new htmlWebpackPlugin({
+        title: '',
+        template: './template.html'
+    }), new CleanWebpackPlugin()]
 };
