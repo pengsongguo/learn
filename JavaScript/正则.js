@@ -13,10 +13,11 @@
 
 // console.log(/guo/.exec('guopengsng'));
 
-var str ='aguopengsognsaiful';
-var reg1=/abk/;
-var reg2=/guo/;
+// var str ='aguopengsognsaiful';
+// var reg1=/abk/;
+// var reg2=/guo/;
 // console.log(str.match(reg2));
 // console.log(str.search(reg1));
 
-console.log(str.replace(/g/g, '---'));
+// console.log(str.replace(/g/g, '---'));
+
