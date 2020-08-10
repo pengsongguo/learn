@@ -1,5 +1,10 @@
 import React from "react";
-
-export default function Button() {
-    return (<button type="button">{this.props.neirong}</button>)
+let arr=[
+    <h1>1</h1>,
+    <h2>2</h2>
+]
+function Button() {
+return <div>{arr}</div>
 }
+
+export default Button;
