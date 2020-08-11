@@ -1,17 +1,17 @@
-import React from 'react';
-import Button from "./components/Button";
-import Test from './components/Test'
-import GrandFather from "./components/GrandFather/GrandFather";
-import FatherAndSon from './components/FatherAndSon/'
+import React, {Suspense, lazy} from 'react';
+import Loading from "./components/Loading";
+
+const FatherAndSon = lazy(() => import('./components/FatherAndSon/index'));
 
 function App() {
 
-  return (
-    <div className="App">
-        <FatherAndSon/>
-        {/*<Test/>*/}
-    </div>
-  );
+    return (
+        <div className="App">
+            <Suspense fallback={<Loading/>}>
+                <FatherAndSon/>
+            </Suspense>
+        </div>
+    );
 }
 
 export default App;
