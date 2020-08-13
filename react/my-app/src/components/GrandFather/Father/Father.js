@@ -4,6 +4,7 @@ class Father extends React.Component{
     constructor() {
         super();
     }
+
     render() {
         return (<div>
             <h5>角色：父亲</h5>

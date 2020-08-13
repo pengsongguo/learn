@@ -107,17 +107,35 @@
 //     console.log(err);
 // });
 
-const loadImg = function (path) {
-    return new Promise(function (resolve, reject) {
-        const img = new Image();
-        img.onload = resolve;
-        img.onerror = reject;
-        img.src = path;
-    })
-};
+// const loadImg = function (path) {
+//     return new Promise(function (resolve, reject) {
+//         const img = new Image();
+//         img.onload = resolve;
+//         img.onerror = reject;
+//         img.src = path;
+//     })
+// };
+//
+// loadImg('alsdfjl.jpg').then((data)=>{
+//     console.log(data);
+// }).catch((err)=>{
+//     console.log(err);
+// });
 
-loadImg('alsdfjl.jpg').then((data)=>{
-    console.log(data);
-}).catch((err)=>{
-    console.log(err);
-});
+// let p = new Promise(function (resolve, reject) {
+//     let a = 2;
+//     let b = 5;
+//     if (a + b === 7) {
+//         resolve('执行成功');
+//     } else {
+//         reject('执行失败');
+//     }
+// });
+//
+// p.then((a) => {
+//     console.log(a);
+// }).catch((e) => {
+//     console.log(e);
+// }).finally(function () {
+//     console.log('结束');
+// });

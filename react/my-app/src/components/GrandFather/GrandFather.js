@@ -1,6 +1,8 @@
 import React from "react";
 import Father from './Father/Father';
 import PropTypes from 'prop-types'
+import shuXing from "./shuXing";
+
 
 export default class GrandFather extends React.Component {
     constructor() {
@@ -8,6 +10,7 @@ export default class GrandFather extends React.Component {
     }
 
     render() {
+        console.log(this.context);
         return (<div>
             <h5>角色：爷爷</h5>
             <div>姓氏：{this.props.xingShi}</div>
