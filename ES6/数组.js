@@ -1,40 +1,21 @@
-// let arr = ['a', 'b', 'c', 'd'];
-// console.log(arr);
-// console.log(...arr);
+const arr1 = ['a', 'b', 'c', 'd'];
+// console.log(arr1);
+// console.log(...arr1);
+const arr2 = ['e', 'f', 'g'];
+const arr3 = [...arr1, ...arr2];
+// console.log(arr3);
 
-// function f(a, b, c) {
-//     console.log(a + b + c);
-// }
-// f(2,3,4);
-//
-// f(...[4,5,9]);
+for (let v of arr3.entries()) {
+    console.log(v);
+}
 
-// let arr = [1, 2, 3];
-// let b = [...arr];
-// console.log(arr === b);
+let likeArr = {0: 'a', 1: 'b', length: 2};
+// console.log(Reflect.toString.call('a'));
+// console.log(Array.from(likeArr));
+// console.log(Reflect.toString.call(Array.from(likeArr)));
 
-// let a = [1, 2];
-// let b = a;
-// console.log(a === b);
+console.log(Array.of('b', 'e'));
 
-// let a = [1, 2, 3];
-// let b = [3, 4, 5];
-// let c = [...a, ...b];
-// console.log(c);
-
-// console.log([...'jksdfaljkdf']);
-
-// let arrayLike = {
-//     0: 'a',
-//     1: 'b',
-//     2: 'c',
-//     length: 3
-// };
-// console.log(Array.prototype.slice.call(arrayLike));
-// console.log(Array.from(arrayLike));
-
-// console.log(Array.of(3, 4, 'd'));
-
-let arr = ['d', 'sf', 'r', 'b', 'y', 'e'];
-console.log(arr.includes('d'));
-console.log(arr.findIndex((v) => v === 'b'));
+console.log(arr3.find((v) => v === 'e'));
+console.log(arr3.findIndex((v) => v === 'e'));
+console.log(arr3.includes('f'));

@@ -1,36 +1,27 @@
-// function f(a = 1) {
-//     console.log(a);
+// function f1(a, b) {
+//     console.log(a, b);
+// }
+
+// f1(2,3);
+
+// function f2(...rest) {
+//     console.log(rest);
 // }
 //
-// console.log(f());
-// console.log(f(4));
+// f2('a', 'b', 'c');
 
-// function f(...v) {
-//     console.log(v);
-//     console.log(Object.prototype.toString.call(v));
+// function f3(...rest) {
+//     console.log(rest);
 // }
 //
-// f(6);
+// f3('a', 'b');
 
-// const f = () => {
-//     return 123
+// const f1 = (a, b) => {
+//     console.log(a, b);
 // };
-// console.log(f());
+// f1(1, 2);
 
-// const f = (...v) => {
-//     return v
-// };
-// console.log(f(123, 123));
-
-// const f = () => {
-//     return this;
-// };
-// console.log(f());
-
-let obj = {
-    a: 'A',
-    b: function () {
-        return this;
-    }
+const f4 = () => {
+    return {a: 2};
 };
-console.log(obj.b());
+console.log(f4());

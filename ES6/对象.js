@@ -1,87 +1,83 @@
-// let a = 'A';
-// let obj = {b: a};
+// const str = 'a';
+// const obj = {str};
 // console.log(obj);
 
-// let obj = {
-//     a: "A",
-//     b: "B",
-//     guo: "郭"
+// const obj = {
+//     a() {
+//         console.log('a');
+//     }
 // };
-//
-// console.log(obj);
-// console.log(Object.getOwnPropertyDescriptor(obj, 'a'));
+// console.log(obj.a);
+
+// const obj = {
+//     a: 'A',
+//     b: 'B'
+// };
+
+// console.log(Object.getOwnPropertyDescriptors(obj));
+// console.log(Reflect.getOwnPropertyDescriptor(obj, 'a'));
+
 // console.log(Object.keys(obj));
 // console.log(Object.getOwnPropertyNames(obj));
-// console.log(Reflect.getOwnPropertyDescriptor(obj, 'guo'));
 // console.log(Reflect.ownKeys(obj));
 
-// const proto = {
-//     foo: 'hello'
-// };
+// this总是指向函数所在的当前对象 super指向当前对象的原型对象
+
+// const proto = {xing: '郭'};
 //
 // const obj = {
-//     foo: 'world',
-//     find() {
-//         return super.foo;
+//     a: 'A',
+//     b: 'B',
+//     xing() {
+//         return super.xing;
 //     }
 // };
-//
+// console.log(obj.xing());
 // Object.setPrototypeOf(obj, proto);
-// console.log(obj.find());
+// console.log(obj.xing());
 
-// console.log(Object.is('foo', 'foo'));
-// console.log(Object.is({}, {}));
-
-// let o1 = {a: 'A'};
-// let o2 = o1;
-//
-// console.log(Object.is(o1, o2));
-
-// console.log(Object.is(NaN, NaN));
-// console.log(Object.is(+0, -0));
-
-// let o1 = {g: '郭'};
-// let o2 = {p: '鹏', s: '松'};
-// let o3 = {p: '平', y: '源'};
-//
-// console.log(o1);
-// console.log(o2);
-// console.log(Object.assign(o1, o2));
-// let o4 = Object.assign(o1, o2, o3);
-//
-// o4.g = 'G';
-// console.log(o1.g);
-// console.log(o1);
-
-// class Point {
-//     constructor(x, y) {
-//         Object.assign(this, x, y);
+// let obj = {
+//     a: {
+//         b: {
+//             c: {
+//                 d: 'DDD'
+//             }
+//         }
 //     }
-// }
-//
-// let p = new Point({a: 'A'}, {b: "B"});
-// console.log(p);
-
-// let obj = {a: 'A'};
-// console.log(Object.getOwnPropertyDescriptors(obj));
-
-// let Person = function () {
-//     this.age = 19;
 // };
-//
-// let p1 = new Person();
-// console.log(p1);
-// console.log(p1.constructor);
-// console.log(Person.prototype);
-//
-// console.log(Object.getPrototypeOf(p1));
-// console.log(p1__proto__);
+// const d = obj?.a?.b?.c?.d || 'D';
+// console.log(d);
 
-let obj = {
-    a: 'A',
-    b: 'B',
-    c: 'C'
-};
-console.log(Object.keys(obj));
-console.log(Object.values(obj));
-console.log(Object.entries(obj));
+// let [a, b] = [1, '1'];
+// console.log(a);
+// console.log(b);
+// console.log(a == b);
+// console.log(Object.is(a, b));
+
+// let a = NaN;
+// let b = NaN;
+// console.log(a == b);
+// console.log(Object.is(a, b));
+
+let obj1 = {a: 'A', b: 'B', e: 'E'};
+let obj2 = {c: 'C', d: 'D'};
+let obj3 = Object.assign({}, obj1, obj2);
+console.log(obj3);
+
+// let o4 = Object.create(null);
+// console.log(o4.toString());
+
+// console.log(Object.getOwnPropertyDescriptors(obj3));
+// console.log(obj3.__proto__);
+
+// for (let v of obj3) {
+//     console.log(v);
+// }
+
+// for (let k of Object.values(obj3)) {
+//     console.log(k);
+// }
+
+for (let [k, v] of Object.entries(obj3)) {
+    console.log(k, v);
+}

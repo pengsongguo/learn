@@ -1,20 +1,29 @@
-// const s = new Set([1, 2, 1, 2, 5, 5, 1, 4, 1, 3, 1, 2]);
-// console.log(s);
+let s1 = new Set(['a', 'b', 'a', 'c', 'd', 'b']);
+console.log(s1);
+// console.log(Reflect.toString.call(s1));
 
-// const s = new Set([1, 2, 3, 1, 2, 3, 1]);
-// console.log(s);
-//
-// console.log(s.size);
-// s.add('j');
-// console.log(s);
-// console.log(s.has('j'));
+// for(let v of s1.entries()){
+//     console.log(v);
+// }
 
-let s = new Set(['a', 'b', 'c', 'b', 'c']);
+console.log(s1.size);
+s1.add('g');
+console.log(s1);
+s1.delete('a');
+console.log(s1);
+console.log(s1.has('b'));
+// s1.clear();
+// console.log(s1);
 
-// console.log(s);
-// console.log(s.keys());
-// console.log(s.entries());
+s1.forEach((v, i) => {
+    console.log(v);
+    console.log(i);
+});
 
-for(let a of s.values()){
-    console.log(a);
-}
+console.log(Array.from(s1));
+
+let ws1 = new WeakSet();
+let o1 = {a: 'a'};
+ws1.add(o1);
+console.log(ws1);
+console.log(ws1.has(o1));
