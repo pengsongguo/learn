@@ -1,40 +1,32 @@
-import React from 'react';
-import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom';
+import React from "react";
+import {BrowserRouter, Route, Switch, NavLink, Redirect} from "react-router-dom";
+import './app.scss';
+
 
 function App() {
-    return (<div>
-        <Router>
-            <ul>
-                <li>
-                    <Link to='/'>首页</Link>
-                </li>
-                <li>
-                    <Link to='/user'>用户</Link>
-                </li>
-                <li>
-                    <Link to='/about'>关于</Link>
-                </li>
-            </ul>
-            <hr/>
-            <Switch>
-                <Route scrit exact path='/'><Home/></Route>
-                <Route path='/user'><User/></Route>
-                <Route path='/about'><About/></Route>
-            </Switch>
-        </Router>
-    </div>)
+    return (
+        <BrowserRouter>
+            <div>
+                <Route exact path="/">
+                    <Home/>
+                </Route>
+                <Route path="/about">
+                    <About/>
+                </Route>
+            </div>
+        </BrowserRouter>)
 }
 
 function Home() {
-    return <div>Home</div>
-}
-
-function About() {
-    return <div>About</div>
+    return <div>首页</div>
 }
 
 function User() {
-    return <div>User</div>
+    return <div>欢迎您 albert</div>
+}
+
+function About() {
+    return <div>关于</div>
 }
 
 export default App;
