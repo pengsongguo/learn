@@ -1,20 +1,17 @@
 import React from "react";
-import {BrowserRouter, Route, Switch, NavLink, Redirect} from "react-router-dom";
+import {BrowserRouter, Route, Switch, NavLink} from "react-router-dom";
 import './app.scss';
-
 
 function App() {
     return (
-        <BrowserRouter>
-            <div>
-                <Route exact path="/">
-                    <Home/>
-                </Route>
-                <Route path="/about">
-                    <About/>
-                </Route>
-            </div>
-        </BrowserRouter>)
+        <BrowserRouter basename="/test">
+            <Switch>
+                <Route path='/user' component={User}/>
+                <Route path='/about' component={About}/>
+                <Route path='/' component={Home}/>
+            </Switch>
+        </BrowserRouter>
+    )
 }
 
 function Home() {
@@ -22,7 +19,7 @@ function Home() {
 }
 
 function User() {
-    return <div>欢迎您 albert</div>
+    return <div>用户</div>
 }
 
 function About() {
