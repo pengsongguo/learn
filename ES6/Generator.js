@@ -1,38 +1,54 @@
-// function* f() {
-//     yield 123;
-//     yield 456;
-//     return 'ok';
+// function* nextFn() {
+//     yield 1;
+//     yield 2;
+//     return 3;
 // }
 //
-// let g = f();
-// console.log(g.next());
-// console.log(g.next());
-// console.log(g.next());
-// console.log(g.next());
-// console.log(g.next());
-// console.log(g);
+// let a = nextFn();
+// console.log(a);
+// let b =nextFn();
+// console.log(a.next());
+// console.log(a.next());
+// console.log(a.next());
+// console.log(a.next());
+// console.log(b.next());
 
-// function* f() {
-//     for (let i = 0; i < 99; i++) {
-//         yield i;
-//     }
+// function* G1() {
+//     yield 3 + 4;
 // }
 //
-// let g = f();
-// console.log(g.next());
-// console.log(g.next());
-// console.log(g.next());
+// let gg1 = G1();
+// console.log(gg1.next());
 
-function* foo() {
-    yield 1;
-    yield 2;
-    yield 3;
-    yield 4;
-    yield 5;
-    yield 6;
-    return 7;
-}
+// function* f() {
+//     console.log('执行了！')
+// }
+//
+// let generator = f();
+//
+// setTimeout(function () {
+//     generator.next()
+// }, 2000);
 
-for (let v of foo()) {
-    console.log(v);
-}
+// function* forXunHuan() {
+//     yield 1;
+//     yield 2;
+//     yield 3;
+//     return true;
+// }
+//
+// for (let v of forXunHuan()) {
+//     console.log(v);
+// }
+// let x = forXunHuan();
+// console.log(x.next());
+// console.log(x.next());
+// console.log(x.next());
+// console.log(x.next());
+
+let obj = {
+    a: 'A',
+    b: 'B',
+    c: 'C',
+    d: 'D'
+};
