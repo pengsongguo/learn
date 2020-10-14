@@ -1,15 +1,32 @@
 import React from 'react';
 import './App.scss';
-import {BrowserRouter, Link, Switch, Route} from "react-router-dom";
+import {BrowserRouter, Link, NavLink, Switch, Route} from "react-router-dom";
 
 function App() {
     return (
         <BrowserRouter>
             <div className="App">
                 <ul>
-                    <li><Link to="/home">首页</Link></li>
-                    <li><Link to="/news" component={News}>新闻</Link></li>
-                    <li><Link to="/about">关于</Link></li>
+                    <li><NavLink to="/home">首页</NavLink></li>
+                    <li><NavLink to="/news">新闻</NavLink></li>
+                    <li><NavLink to="/about">关于</NavLink></li>
+                    <li>
+                        {/*<NavLink*/}
+                        {/*    to="/events/123"*/}
+                        {/*    isActive={(match, location) => {*/}
+                        {/*        if (!match) {*/}
+                        {/*            return false;*/}
+                        {/*        }*/}
+                        {/*        console.log(match);*/}
+                        {/*        console.log(location);*/}
+                        {/*        // only consider an event active if its event id is an odd number*/}
+                        {/*        const eventID = parseInt(match.params.eventID);*/}
+                        {/*        return !isNaN(eventID) && eventID % 2 === 1;*/}
+                        {/*    }}*/}
+                        {/*>*/}
+                        {/*    Event 123*/}
+                        {/*</NavLink>*/}
+                    </li>
                 </ul>
             </div>
             <Switch>
