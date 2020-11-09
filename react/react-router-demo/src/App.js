@@ -30,7 +30,7 @@ function App() {
                 </ul>
             </div>
             <Switch>
-                <Route path="/home" component={Home}/>
+                <Route path="/home" match component={Home}/>
                 <Route path="/news" component={News}/>
                 <Route path="/about" component={About}/>
             </Switch>
