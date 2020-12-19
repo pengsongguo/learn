@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "private": true,
+  "slidEffects": true,
   "scripts": {
     "build": "webpack",
     "watch": "webpack --watch",
@@ -22,7 +23,8 @@
     "webpack": "^5.10.0",
     "webpack-cli": "^4.2.0",
     "webpack-dev-middleware": "^4.0.2",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.7.2"
   },
   "dependencies": {
     "lodash": "^4.17.20"

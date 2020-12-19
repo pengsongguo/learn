@@ -4,6 +4,7 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const webpack = require('webpack');
 module.exports = {
     entry: './src/index.js',
+    mode: 'development',
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
@@ -21,7 +22,6 @@ module.exports = {
             template: require('html-webpack-template'),
             inject: true,
             appMountId: 'root'
-        }),
-        new webpack.NamedModulesPlugin()
+        })
     ]
 };
