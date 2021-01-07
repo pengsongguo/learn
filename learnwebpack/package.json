@@ -1,0 +1,22 @@
+{
+  "name": "learnwebpack",
+  "version": "1.0.0",
+  "description": "练习webpack",
+  "private": true,
+  "scripts": {
+    "build": "webpack"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^5.0.1",
+    "file-loader": "^6.2.0",
+    "postcss": "^8.2.2",
+    "postcss-loader": "^4.1.0",
+    "sass": "^1.32.2",
+    "sass-loader": "^10.1.0",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.11.1",
+    "webpack-cli": "^4.3.1"
+  }
+}
