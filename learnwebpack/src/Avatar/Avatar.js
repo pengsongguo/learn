@@ -1,11 +1,11 @@
-import pic from './iShot2021-01-07 18.15.19.jpg';
+import pic from './iShot2021-01-12 16.09.01.jpg';
 import './Avatar.scss';
-
 export const Avatar = () => {
-    let Avatar = document.createElement('div');
-    Avatar.innerHTML = `<div id="Avatar">
-    <img src=${pic}>
-    </div>`;
-    let Root = document.getElementById('root');
-    Root.appendChild(Avatar);
+    const AvatarDOM = document.createElement('div');
+    AvatarDOM.id = "Avatar";
+    const Pic = new Image();
+    Pic.src = pic;
+    AvatarDOM.appendChild(Pic);
+    const RootDOM = document.getElementById('root');
+    RootDOM.appendChild(AvatarDOM);
 };
