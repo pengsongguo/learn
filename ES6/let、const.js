@@ -1,43 +1,16 @@
-// {
-//     let a = 10;
-//     var b = 13;
-// }
-// // console.log(a);
-// console.log(b);
+// console.log(a,b);
+// console.log(c);
 
-// var tmp = 123;
-// if (true) {
-//     tmp = 'bbb';
-//     let tmp;
-// }
+// let a=123;
+// const b=123;
+// var c=333;
 
-// var a=123;
-// var a='dd';
-// console.log(a);
+// tmp=123;
+// let tmp=44;
+// console.log(tmp);
 
-// {
-//     let a=123;
-//     const b=123;
-// }
-//
-// console.log(a);
-// console.log(b);
+console.log(typeof a);
+let a=55;
 
-// const H=123;
-// console.log(H);
-//
-// const a;
-// console.log(a);
-
-// const obj = {};
-// obj.a = 123;
-// console.log(obj);
-
-// var\function
-// let\const\var\function\import\class
-
-// var a=123;
-// let b=1;
-// console.log(global.a);
-// console.log(global.b);
+import 
 

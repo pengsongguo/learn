@@ -1,10 +1,10 @@
 function Animal() {
-    this.species = "动物";
+  this.species = "动物";
 }
 
 function Cat(name, color) {
-    this.name = name;
-    this.color = color;
+  this.name = name;
+  this.color = color;
 }
 
 // function Cat(name,color){
@@ -19,15 +19,14 @@ function Cat(name, color) {
 // Cat.prototype.species = new Animal();
 
 function extend(Child, Parent) {
-    var F = function () {
-    };
-    F.prototype = Parent.prototype;
-    Child.prototype = new F();
-    Child.prototype.constructor = Child;
-    Child.uber = Parent.prototype;
+  var F = function () {};
+  F.prototype = Parent.prototype;
+  Child.prototype = new F();
+  Child.prototype.constructor = Child;
+  Child.uber = Parent.prototype;
 }
 
-var c1 = new Cat('小花', '花色');
+var c1 = new Cat("小花", "花色");
 console.log(c1.species);
 console.log(c1);
 

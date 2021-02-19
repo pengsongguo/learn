@@ -6,8 +6,8 @@
 // Avatar();
 // Card();
 
-import {zhongGuo} from "./src/components/Word/zhongGuo";
-import {jingYeSi} from "./src/components/Word/jingYeSi";
+import { zhongGuo } from "./src/components/Word/zhongGuo";
+import { jingYeSi } from "./src/components/Word/jingYeSi";
 
 jingYeSi();
 zhongGuo();
