@@ -11,7 +11,7 @@
 // 执行函数内部的代码
 
 function Person() {
-    this.shuXing = '人类';
+    this.shuXing = '人-类';
 };
 var p1 = new Person();
 console.log(p1);
