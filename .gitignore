@@ -25,4 +25,5 @@ Thumbs.db
 .idea
 *.css.map
 *.sass-cache
+.vscode
 dist/
