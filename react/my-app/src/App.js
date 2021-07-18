@@ -1,22 +1,25 @@
 import React from "react";
 import {BrowserRouter, Route, Switch, Redirect} from "react-router-dom";
 import './app.scss';
+import ErrorBoundary from "./ErrorBoundary";
 
 function App() {
     return (
         <BrowserRouter>
-            <Switch>
-                <Route path='/' exact component={Home}/>
-                <Route path='/user/' strict component={User}/>
-                <Route path='/about' component={About}/>
-                <Redirect from="/olduser" to="/user"/>
-            </Switch>
+                <Switch>
+                    <ErrorBoundary><Route path='/' exact component={Home}/></ErrorBoundary>
+
+                    <Route path='/user/' strict component={User}/>
+                    <Route path='/about' component={About}/>
+                    <Redirect from="/olduser" to="/user"/>
+                </Switch>
         </BrowserRouter>
     )
 }
 
 function Home() {
-    return <div>首页</div>
+    const obj={a:'中国',b:'jjj'}
+    return <div>{obj.c}</div>
 }
 
 function User() {
@@ -24,7 +27,7 @@ function User() {
 }
 
 function About() {
-    return <div>关于</div>
+    return <div>{'d'.a}</div>
 }
 
 export default App;
