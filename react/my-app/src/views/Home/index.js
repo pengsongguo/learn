@@ -1,9 +1,0 @@
-import React from 'react';
-
-export default class Home extends React.Component {
-    render() {
-        return (<div id="Home">
-            Home,Home
-        </div>)
-    }
-}
