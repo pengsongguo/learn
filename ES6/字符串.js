@@ -12,7 +12,11 @@
 // console.log('b'.repeat(3));
 
 let str = 'abcdefg';
-console.log(str);
-console.log(str.includes('a'));
-console.log(str.startsWith('a'));
-console.log(str.endsWith('de'));
+// console.log(str);
+// console.log(str.includes('a'));
+// console.log(str.startsWith('a'));
+// console.log(str.endsWith('de'));
+
+for(let v of str){
+    console.log(v)
+}
