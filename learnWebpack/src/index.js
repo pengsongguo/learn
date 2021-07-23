@@ -1,9 +1,14 @@
-import {cube} from "./math";
+import _ from 'lodash';
+import printMe from "./print";
 
 function component() {
-    var ele = document.createElement('pre');
-    ele.innerHTML = ['hello webpack', '5 的三次方是', cube(5)].join('\n\n');
-    return ele;
+    const element = document.createElement('div');
+    const btn = document.createElement('button');
+    element.innerHTML = _.join(['hello', 'webpack','hello','china'], ' ');
+    btn.innerHTML = '点-击-查看控制台';
+    btn.onclick = printMe;
+    element.appendChild(btn);
+    return element;
 }
 
 document.body.appendChild(component());

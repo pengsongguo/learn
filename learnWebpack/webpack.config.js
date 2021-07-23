@@ -1,36 +1,24 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const htmlWebpackPlugin = require('html-webpack-plugin');
+
+
 module.exports = {
     entry: {
-        app: './src/index.js',
+        main: './src/index.js',
+        print: './src/print.js'
     },
     mode: 'development',
-    output: {
-        filename: '[name].bundle.js',
-        path: path.resolve(__dirname, './dist'),
-        publicPath: '/'
-    },
     devtool: 'inline-source-map',
-    devServer: {
-        contentBase: './dist',
-        hot: true
+    devServer:{
+        contentBase:'./dist'
     },
-    module: {
-        rules: [{
-            test: /\.css$/,
-            use: ['style-loader', 'css-loader']
-        }, {
-            test: /.(png|jpg|jpeg|gif)$/,
-            use: {
-                loader: 'file-loader'
-            }
-        }]
+    output: {
+        filename: '[name]_bundle.js',
+        path: path.resolve(__dirname, 'dist'),
+        clean: true,
+        publicPath:"/"
     },
-    plugins: [
-        new CleanWebpackPlugin(),
-        new HtmlWebpackPlugin({
-            title: '热模块更新'
-        }),
-    ]
+    plugins: [new htmlWebpackPlugin({
+        title: '开发模式'
+    })]
 }
