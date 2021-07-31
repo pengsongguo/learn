@@ -1,14 +1,12 @@
-import _ from 'lodash';
-import printMe from "./print";
-
-function component() {
+function getComponent() {
     const element = document.createElement('div');
-    const btn = document.createElement('button');
-    element.innerHTML = _.join(['hello', 'webpack','hello','china'], ' ');
-    btn.innerHTML = '点-击-查看控制台';
-    btn.onclick = printMe;
-    element.appendChild(btn);
-    return element;
+    return import('lodash').then(({default: _}) => {
+        const element = document.createElement('div');
+        element.innerHTML = _.join(['hello', 'webpack'], ' ');
+        return element;
+    }).catch((error) => '组件报错');
 }
 
-document.body.appendChild(component());
+getComponent().then((component) => {
+    document.body.appendChild(component);
+})
