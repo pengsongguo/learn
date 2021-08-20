@@ -1,6 +1,20 @@
-process.argv.forEach((val, index) => {
-    console.log(`${index}: ${val}`)
-})
-console.log(process.argv);
-const args = process.argv.slice(2)
-console.log(args);
+// function time() {
+//     let t = new Date().getTime()
+//     console.log(t);
+// }
+//
+// setInterval(time, 1000)
+// function clear(){
+//     process.exit(1)
+// }
+// setTimeout(clear, 5000)
+//
+
+// console.log(process.argv);
+
+// process.argv.forEach((v, i) => {
+//     console.log(`${i}:${v}`);
+// })
+
+const a =require('./a');
+console.log(a.car);
