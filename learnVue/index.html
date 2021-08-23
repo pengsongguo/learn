@@ -9,18 +9,27 @@
 </head>
 <body>
 <div id="app">
-<ul>
-    <li v-for="v in list">{{v}}</li>
-</ul>
+    <div id="demo">{{fullname}}</div>
 </div>
 </body>
 <!-- 开发环境版本，包含了有帮助的命令行警告 -->
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 <script>
-    const vm = new Vue({
+    console.log(1);
+    var vm = new Vue({
         el: '#app',
         data: {
-            list: ['a', 'b', 'c', 'd']
+            firstName: 'Foo',
+            lastName: 'Bar',
+            fullName: 'Foo Bar'
+        },
+        watch: {
+            firstName: function (val) {
+                this.fullName = val + '' + this.lastName;
+            },
+            lastName: function (val) {
+                this.fullName = this.firstName + ' ' + val;
+            }
         }
     })
 </script>
