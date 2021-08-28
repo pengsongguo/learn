@@ -10,32 +10,37 @@
 </head>
 <body>
 <div id="app">
-<button-counter v-bind:title="abc"></button-counter>
-<button-counter title="ljkljkl"></button-counter>
-<button-counter></button-counter>
-<button-counter></button-counter>
+    <h4>组件学习</h4>
+    <button-guo></button-guo>
+    <button-guo></button-guo>
 </div>
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 <script>
 
-    // 定义一个button-counter组件
-    Vue.component('button-counter', {
+    Vue.component('button-guo', {
         data: function () {
             return {
-                count: 0
+                name: '周杰伦',
+                n: 0,
+                style: {
+                    color: 'red',
+                    cursor: 'pointer'
+                }
             }
         },
-        props:['title'],
-        template:'<button @click="count++">标题：{{title}}点击增加{{count}}</button>'
+        methods: {
+            jiafa: function () {
+                return this.n += 1;
+            }
+        },
+        template: '<span @click="jiafa" :style="style">{{`${name}+++${n}`}}</span>'
     })
 
     var vm = new Vue({
         el: '#app',
-
     })
-
 
 </script>
 </html>
