@@ -10,29 +10,28 @@
 </head>
 <body>
 <div id="app">
-<button-counter v-bind:title="abc"></button-counter>
-<button-counter title="ljkljkl"></button-counter>
-<button-counter></button-counter>
-<button-counter></button-counter>
+    <h4>组件</h4>
+    <br>
+    <br>
+   <button-n></button-n>
 </div>
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 <script>
-
-    // 定义一个button-counter组件
-    Vue.component('button-counter', {
-        data: function () {
+    Vue.component('button-n', {
+        data:function() {
             return {
-                count: 0
+                n:0
             }
         },
-        props:['title'],
-        template:'<button @click="count++">标题：{{title}}点击增加{{count}}</button>'
+        template:'<button @click="n+=1">{{n}}</button>'
     })
-
     var vm = new Vue({
         el: '#app',
+        data: {
+            name: '周杰伦'
+        },
 
     })
 
