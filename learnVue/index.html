@@ -10,36 +10,69 @@
 </head>
 <body>
 <div id="app">
-    <h4>组件学习</h4>
-    <button-guo></button-guo>
-    <button-guo></button-guo>
+    <h3>案例：todolist</h3>
+    <hr>
+    <ul v-if="list.length>0">
+        <li v-for="(v,i) in list" key="i">
+            <span :style="v.wancheng&&huaxian">{{v.neirong}}</span>
+            <button @click="shanchu(i)">删除</button>
+            <button @click="wancheng(i)">完成</button>
+        </li>
+    </ul>
+    <div v-else>请添加今天任务</div>
+    <input type="text" placeholder="请输入待办事项" v-model="dangqian">
+    <button @click="tianjia">添加</button>
+    <button @click="qingkong">清空列表</button>
 </div>
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 <script>
 
-    Vue.component('button-guo', {
-        data: function () {
-            return {
-                name: '周杰伦',
-                n: 0,
-                style: {
-                    color: 'red',
-                    cursor: 'pointer'
-                }
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            list: [{
+                neirong: '吃饭',
+                wancheng: false,
+            }, {
+                neirong: '学习',
+                wancheng: false,
+            }, {
+                neirong: '打球',
+                wancheng: false,
+            }],//代办清单
+            dangqian: '',//当前任务
+            huaxian: {
+                textDecoration: 'line-through'
             }
         },
         methods: {
-            jiafa: function () {
-                return this.n += 1;
+            tianjia: function () {
+                if (this.dangqian) {
+                    this.list.push({
+                        neirong: this.dangqian,
+                        wancheng: false
+                    })
+                    this.dangqian = '';
+                } else {
+                    alert('添加内容不能为空')
+                }
+            },
+            qingkong: function () {
+                this.list = [];
+            },
+            wancheng: function (i) {
+                this.list = this.list.filter((v, index) => {
+                    return index !== i;
+                })
+            },
+            shanchu: function (i) {
+                // let tmp = this.list;
+                this.list[i].wancheng = true
+                // this.list = tmp;
             }
-        },
-        template: '<span @click="jiafa" :style="style">{{`${name}+++${n}`}}</span>'
-    })
-
-    var vm = new Vue({
-        el: '#app',
+        }
     })
 
 </script>
