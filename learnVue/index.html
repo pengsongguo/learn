@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h2>{{title}}</h2>
+      <hr />
+      <ul v-if="newslist.length>0">
+        <li v-for="(v,i) in newslist">
+          <div>时间：{{v.ctime}}</div>
+          <div>标题：{{v.title}}</div>
+          <div>简介：{{v.description}}</div>
+          <a :href="v.url">点击查看</a>
+        </li>
+      </ul>
+      <div v-else>今日没有新闻</div>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: "#app",
+      data: {
+        title: "新闻列表",
+        newslist: [],
+      },
+      created() {
+        console.log($el);
+        fetch(
+            "http://api.tianapi.com/topnews/index?key=6958c58f099535c47a0b927c61878cac"
+          ).then((response) => {
+              return response.json();
+            })
+            .then((data) => {
+              if (data.code === 200) {
+               this.newslist=data.newslist;
+              }
+            });
+      }
+    });
+  </script>
+</html>
