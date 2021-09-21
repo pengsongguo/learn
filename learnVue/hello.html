@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>源源的小卖铺</title>
+  </head>
+  <style>
+    .active {
+      background-color: skyblue;
+      color: #000;
+    }
+    ul {
+      cursor: pointer;
+    }
+    .tips {
+      color: #828181;
+      font-size: 14px;
+    }
+    .special {
+      font-size: 18px;
+      color: red;
+    }
+  </style>
+  <body>
+    <div id="app">
+      <!-- 店铺名 -->
+      <h3>{{title}}</h3>
+      <!-- 添加商品 -->
+      <goods-add v-model="currentGoods" @add-goods="addGoods"></goods-add>
+      <!-- 商品列表 -->
+      <goods-list :goods-list="goodsList"></goods-list>
+      <hr>
+      <!-- 商品汇总介绍 -->
+      <div class="tips">
+        一共上架了 <span class="special">{{goodsListNum}}</span> 个商品
+      </div>
+    
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script>
+    // 商品添加组件
+    Vue.component("goods-add", {
+      props: ["value"],
+      template: `<div>
+          <input type="text" :value="value" @input="onInput" @keydown.enter="addGoods" />
+          <button @click="addGoods">添加商品</button>
+        </div>`,
+      methods: {
+        // 添加商品
+        addGoods() {
+          this.$emit("add-goods");
+        },
+        onInput(e) {
+          this.$emit("input", e.target.value);
+        },
+      },
+    });
+
+    // 商品列表组件
+    Vue.component("goods-list", {
+      props: {
+        goodsList: {
+          type: Array,
+          default: () => [],
+        },
+      },
+      data() {
+        return {
+          selectGoods: "", //选中的商品
+        };
+      },
+      template: `<div>
+                  <ul v-if="goodsList.length>0">
+                    <li
+                      :class="v===selectGoods?'active':''"
+                      v-for="(v,i) in goodsList"
+                      :key="i"
+                      @click="selectGoods=v">
+                      {{v}}
+                    </li>
+                  </ul>
+                  <div v-else>商品列表为空</div>
+                  <br/>
+                  <div v-if="selectGoods">
+                    <span class="tips">您选择的商品是：</span>
+                    <span class="special">{{selectGoods}}</span>
+                  </div>
+                  <div v-else>
+                    <span class="tips">你还没有选择商品</span>
+                  </div>
+              </div>`,
+    });
+
+    // 源源的小卖铺根组件
+    const app = new Vue({
+      el: "#app",
+      data: {
+        title: "源源的小卖铺",
+        goodsList: ["电脑", "手机", "矿泉水"], //商品列表
+        currentGoods: "", //当前添加的商品名称
+      },
+      methods: {
+        // 添加商品
+        addGoods() {
+          if (this.currentGoods) {
+            this.goodsList.push(this.currentGoods);
+            this.currentGoods = "";
+          }
+        },
+      },
+      computed: {
+        // 总共上架商品数量
+        goodsListNum() {
+          return this.goodsList.length;
+        },
+      },
+    });
+  </script>
+</html>
