@@ -22,25 +22,43 @@
       font-size: 18px;
       color: red;
     }
+    .msg-tip{
+      height: 30px;
+      line-height: 30px;
+      background-color: rgba(196, 36, 103, 0.26);
+      padding-left: 20px;
+      margin: 20px auto;
+    }
+    .close-icon{
+      float: right;
+      margin-right: 20px;
+      cursor: pointer;
+    }
   </style>
   <body>
     <div id="app">
       <!-- 店铺名 -->
       <h3>{{title}}</h3>
-      <!-- 添加商品 -->
-      <goods-add v-model="currentGoods" @add-goods="addGoods"></goods-add>
-      <!-- 商品列表 -->
+      <!-- 提示组件 -->
+      <message-tip>添加商品成功!</message-tip>
+      <!-- 商品添加组件 -->
+      <goods-add v-model="currentGoods" @add-goods="addGoods"/></goods-add>
+      <!-- 商品列表组件 -->
       <goods-list :goods-list="goodsList"></goods-list>
-      <hr>
+      <hr />
       <!-- 商品汇总介绍 -->
       <div class="tips">
         一共上架了 <span class="special">{{goodsListNum}}</span> 个商品
       </div>
-    
     </div>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
   <script>
+    // 提示组件
+    Vue.component("message-tip",{
+      template:`<div class="msg-tip"><slot></slot><span class="close-icon"> ❎ </span></div>`
+    })
+
     // 商品添加组件
     Vue.component("goods-add", {
       props: ["value"],
