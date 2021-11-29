@@ -21,10 +21,75 @@
 // a = String(a);
 // console.log(typeof a);
 
-var obj = { a: 1 };
+// var obj = { a: 1 };
 
-console.log(obj);
-var b = String(obj);
-console.log(b);
-var c ="898kk";
-console.log(Number(c));
+// console.log(obj);
+// var b = String(obj);
+// console.log(b);
+// var c ="898kk";
+// console.log(Number(c));
+
+// var str='锄禾日当午'+'汗滴"禾"下土';
+// console.log(str)
+
+// var str='123'+1;
+// console.log(str)
+
+// var num=123;
+// num=num+'';
+// console.log("🚀 ~ file: test.js ~ line 40 ~ num", num)
+// console.log(num);
+
+// var result=1+2+"3";
+// console.log("🚀 ~ file: test.js ~ line 44 ~ result", result);
+
+// var a = 3 % 2;
+// console.log("🚀 ~ file: test.js ~ line 47 ~ a", a);
+
+// var a = 123;
+// a = -a;
+// console.log("🚀 ~ file: test.js ~ line 50 ~ a", a);
+
+// var a = -123;
+// a = -a;
+// console.log("🚀 ~ file: test.js ~ line 55 ~ a", a);
+
+// var a = 1;
+// // a++;
+// console.log(++a);
+// var b = 1;
+// console.log(b++);
+
+// var a = 10;
+// a++;
+// console.log(a++);
+// console.log(++a);
+
+// var a = 10;
+// console.log(a--);
+// console.log(--a);
+
+// var n1 = 10,
+//   n2 = 20;
+// var n = n1++;
+// console.log("n = > " + n); //10
+// console.log("n1 = > " + n1); //11
+// n = ++n1;
+// console.log("n = > " + n); //12
+// console.log("n1 = > " + n1); //12
+// n = n2--;
+// console.log("n = > " + n); //20
+// console.log("n2 = > " + n2); //19
+// n = --n2;
+// console.log("n = > " + n); //18
+// console.log("n2 = > " + n2); //18
+
+// var a = 0 && true;
+// console.log("🚀 ~ file: test.js ~ line 88 ~ a", a);
+
+// var b = false || true;
+// console.log("🚀 ~ file: test.js ~ line 91 ~ b", b)
+
+var c = "aa" || false;
+console.log("🚀 ~ file: test.js ~ line 94 ~ c", c)
+
