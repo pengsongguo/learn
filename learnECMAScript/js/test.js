@@ -90,6 +90,45 @@
 // var b = false || true;
 // console.log("🚀 ~ file: test.js ~ line 91 ~ b", b)
 
-var c = "aa" || false;
-console.log("🚀 ~ file: test.js ~ line 94 ~ c", c)
+// var c = "aa" || false;
+// console.log("🚀 ~ file: test.js ~ line 94 ~ c", c)
 
+// var d = "" || false;
+// console.log("🚀 ~ file: test.js ~ line 97 ~ d", d);
+
+// var a = 10;
+// a -= 3;
+// console.log("🚀 ~ file: test.js ~ line 101 ~ a", a);
+
+// var a = 5 > '10';
+// console.log("🚀 ~ file: test.js ~ line 104 ~ a", a);
+
+// var a = 2 > true;
+// console.log("🚀 ~ file: test.js ~ line 107 ~ a", a);
+
+// var str = "\u2620";
+// console.log("🚀 ~ file: test.js ~ line 109 ~ str", str);
+
+// var a = NaN;
+// console.log(a == a);
+// console.log(isNaN(a));
+// console.log(1!='1');
+
+// {
+//   true ? console.log("a") : console.log("b");
+// }
+
+// prompt('请输入期末成绩')
+
+// var n = 12;
+// switch (n) {
+//   case 10:
+//     console.log(n);
+//     break;
+//   case 12:
+//     console.log(n);
+//     break;
+//   default:
+//     console.log("默认");
+//     break;
+// }
