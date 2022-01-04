@@ -132,3 +132,13 @@
 //     console.log("默认");
 //     break;
 // }
+
+function Fn() {}
+
+console.log(Fn.prototype);
+
+var f1 = new Fn();
+
+console.log("🚀 ~ file: test.js ~ line 143 ~ f1.__proto__ === Fn.prototype", f1.__proto__ === Fn.prototype)
+
+
