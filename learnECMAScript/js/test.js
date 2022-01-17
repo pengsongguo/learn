@@ -133,12 +133,29 @@
 //     break;
 // }
 
-function Fn() {}
+// function Fn() {}
+//
+// console.log(Fn.prototype);
+//
+// var f1 = new Fn();
+//
+// console.log("🚀 ~ file: test.js ~ line 143 ~ f1.__proto__ === Fn.prototype", f1.__proto__ === Fn.prototype)
 
-console.log(Fn.prototype);
-
-var f1 = new Fn();
-
-console.log("🚀 ~ file: test.js ~ line 143 ~ f1.__proto__ === Fn.prototype", f1.__proto__ === Fn.prototype)
-
-
+// Promise读取文件
+// const fs = require('fs');
+//
+//
+// const p = new Promise(function (resolve, reject) {
+//     fs.readFile('./登鹳雀楼.md', (err, data) => {
+//         if (err) {
+//             reject(err)
+//         } else {
+//             resolve(data)
+//         }
+//     })
+// })
+// p.then(function (res){
+//     console.log(res);
+// },function (err){
+//     console.log('读取失败');
+// })

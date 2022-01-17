@@ -7,7 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-<h1></h1>
+<h1>test</h1>
+<!--<button id="btn1">循环时间</button>-->
+<input type="number" id="ipt1">
+<button id="btn2">斐波那契数输出</button>
 </body>
 </html>
 <script>
@@ -145,21 +148,225 @@
     // var p2 = new Person('李四', 35)
     // console.log(p2);
 
-    function Father(name) {
-        this.name = name;
-        this.xing = '郭'
-    }
+    // function Father(name) {
+    //     this.name = name;
+    //     this.xing = '郭'
+    // }
+    //
+    // function Child(name) {
+    //     Father.call(name)
+    //     // this.name = name;
+    // }
+    //
+    // Child.prototype = new Father();
+    // Child.prototype.constructor = Child;
+    // var f1 = new Father('郭保江')
+    // var c1 = new Child('郭鹏松')
+    // console.log(f1);
+    // console.log(c1);
 
-    function Child(name) {
-        Father.call(name)
-        // this.name = name;
-    }
+    // function f1(){
+    //     var a=1;
+    //     function f2(){
+    //         console.log(a);
+    //     }
+    //     f2()
+    // }
+    //
+    // console.log(f1());
 
-    Child.prototype = new Father();
-    Child.prototype.constructor = Child;
-    var f1 = new Father('郭保江')
-    var c1 = new Child('郭鹏松')
-    console.log(f1);
-    console.log(c1);
+    // (function f(){
+    //     var $={
+    //
+    //     }
+    //     function a(){
+    //         return a()
+    //     }
+    // })()
+
+    // new 一个对象背后做了什么
+    // 1、创建一个空对象
+    // 2、将实例对象的隐性原型对象指向构造函数的显性原型对象
+    // 3、执行构造函数内部语句
+    // 4、返回实例对象
+
+    // function fun(n, o) {
+    //     console.log(o);
+    //     return {
+    //         fun: function (m) {
+    //             console.log(n);
+    //             return fun(m, n)
+    //         }
+    //     }
+    // }
+    // var a=fun(0)
+    // a.fun(1)
+    // a.fun(2)
+
+
+    // document.getElementById('btn1').onclick = function () {
+    //     console.log('定时器启动前');
+    //     var s1 = Date.now();
+    //
+    //     var s2 = setTimeout(function (){
+    //         console.log('定时器执行中--'+(Date.now() - s1));
+    //     }, 200)
+    //     console.log('定时器结束后');
+    //     for (let i = 0; i < 10000000000; i++) {
+    //
+    //     }
+    // }
+
+    // setTimeout(function () {
+    //     console.log(2);
+    // }, 2000)
+    //
+    // setTimeout(function () {
+    //     console.log(1);
+    // }, 1000)
+    //
+    // setTimeout(function (){
+    //     console.log(0);
+    // },0)
+    //
+    // function fn() {
+    //     console.log('fn 函数');
+    // }  
+    //
+    // fn();
+    //
+    // console.log('alert 之前');
+    // alert('alert---')
+    // console.log('alert 之后');
+
+    // 斐波那契数列
+    // 1 1 2 3 5 8 13
+    // function fb(n) {
+    //     if (typeof n === "number") {
+    //         return n <= 2 ? 1 : fb(n - 1) + fb(n - 2);
+    //     }
+    // }
+    //
+    // document.getElementById('btn2').onclick = function () {
+    //     var number = Number(document.getElementById('ipt1').value);
+    //     var result = fb(number);
+    //     alert(result)
+    //     var w=new Worker();
+    //     // console.log(fb(Number(document.getElementById('ipt1').value)));
+    // }
+
+    // setTimeout(function () {
+    //     console.log(111);
+    //     setTimeout(function () {
+    //         console.log(222);
+    //         setTimeout(function () {
+    //             console.log(333);
+    //         }, 3000)
+    //     }, 2000)
+    // }, 1000)
+
+    //  function one() {
+    //      setTimeout(function () {
+    //          console.log(111);
+    //          t.next()
+    //      }, 1000)
+    //  }
+    //
+    //  function two() {
+    //      setTimeout(function () {
+    //          console.log(222);
+    //          t.next()
+    //      }, 2000)
+    //  }
+    //
+    //  function three() {
+    //      setTimeout(function () {
+    //          console.log(333);
+    //          t.next()
+    //      }, 3000)
+    //  }
+    //
+    //  function* time() {
+    //      yield one()
+    //      yield two()
+    //      yield three()
+    //  }
+    //
+    //  let t = time();
+    // t.next()
+
+    // 模拟获取 用户数据 订单数据 商品数据
+    // function getUsers() {
+    //     setTimeout(() => {
+    //         let data = '用户数据'
+    //         // 调用next方法，将数据传入
+    //         iterator.next(data)
+    //     }, 1000)
+    // }
+    //
+    // function getOrders() {
+    //     setTimeout(() => {
+    //         let data = '订单数据'
+    //         iterator.next(data)
+    //     }, 2222)
+    // }
+    //
+    // function getGoods() {
+    //     setTimeout(() => {
+    //         let data = '商品数据'
+    //         iterator.next(data)
+    //     }, 3333)
+    // }
+    //
+    // // 生成器函数
+    // function* gen() {
+    //     console.log(yield getUsers());
+    //     console.log(yield getOrders());
+    //     console.log(yield getGoods());
+    // }
+    //
+    // //生成调用器
+    // let iterator = gen();
+    // iterator.next()
+
+    //实例化promise对象
+    // const p = new Promise(function (resolve, reject) {
+    //     setTimeout(function () {
+    //         // let data = '数据库的用户数据'
+    //         // resolve(data)
+    //         let err = '错误'
+    //         reject(err)
+    //     }, 1111)
+    // })
+    //
+    // //调用promise对象的then方法
+    // p.then(function (value) {
+    //     console.log(value + '1');
+    // }, function (reason) {
+    //     console.log(reason + '2');
+    // })
+
+    //promise封装ajax
+    const p = new Promise(function (resolve, reject) {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', 'http://api.tianapi.com/topnews/index?key=6958c58f099535c47a0b927c61878cac')
+        xhr.send()
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    // console.log(xhr.response);
+                    resolve(xhr.response)
+                } else {
+                    // console.log('请求失败');
+                    reject('请求失败')
+                }
+            }
+        }
+    })
+
+    p.then((res) => {
+        console.log(res);
+    })
+
 
 </script>
