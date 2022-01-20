@@ -159,3 +159,43 @@
 // },function (err){
 //     console.log('读取失败');
 // })
+
+// const fs = require('fs');
+// const p = new Promise((resolve, reject) => {
+//     fs.readFile('./登鹳雀楼.md', (err, data) => {
+//         resolve(data)
+//     })
+// })
+//
+// p.then((res) => {
+//     console.log(res.toString());
+// })
+
+// let s = new Set(['好事儿', '坏事儿', '喜事儿', '大事儿', '小事儿'])
+// // console.log(s);
+//
+// s.add('糟心事儿')
+//
+// s.delete('糟心事儿')
+// s.delete('坏事儿')
+// console.log(s);
+// console.log(s.has('小事儿'));
+// s.clear()
+// console.log(s);
+
+// 数组去重
+// const arr1 = [1, 2, 3, 4, 5, 3, 4, 5, 2, 3, 4]
+// // const result=[...new Set(arr1)]
+// // console.log(result);
+// // 并集
+// const arr2 = [2, 3, 9, 8, 9, 7, 0, 3, 2, 2, 3, 1]
+//
+// const result = [...new Set(arr1)].filter((item) => {
+//     let s2 = new Set(arr2);
+//     if (s2.has(item)) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// })
+// console.log(result);

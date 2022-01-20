@@ -363,10 +363,157 @@
             }
         }
     })
+    //
+    // p.then((res) => {
+    //     console.log(res);
+    // })
 
-    p.then((res) => {
-        console.log(res);
-    })
+    // const p=new Promise((resolve => ))
 
+    // set
+    // let s = new Set(['好事儿', '坏事儿', '喜事儿', '大事儿', '小事儿'])
+    // console.log(s);
+
+    // async function fn() {
+    //     // return 'aaa'
+    //     // throw new Error('出错')
+    //     return new Promise((resolve, reject) => {
+    //         resolve('成功')
+    //         // reject('失败')
+    //     })
+    // }
+    //
+    // const result = fn();
+    // // console.log(result);
+    // result.then(value => {
+    //     console.log(value);
+    // }, reason => {
+    //     console.warn(reason);
+    // })
+
+    // const p = new Promise((resolve, reject) => {
+    //     resolve('成功的值')
+    // })
+    //
+    // async function main() {
+    //     let result = await p;
+    //     console.log(result);
+    //     return result;
+    // }
+    //
+    // main()
+
+    // console.log(1);
+    //
+    // async function getCityId() {
+    //     let cityId = await new Promise((resolve, reject) => {
+    //         setTimeout(function () {
+    //             resolve('北京市')
+    //         }, 3333)
+    //     })
+    //     return cityId
+    // }
+    //
+    // getCityId().then(res=>{
+    //     console.log(`当前城市是 ${res}`);
+    //     console.log(3);
+    // })
+
+    // console.log(1);
+    // const getCityId = () => {
+    //     let cityId = '110100';
+    //     if (1) {
+    //         cityId = readCookie("app_cityid");
+    //     } else {
+    //         cityId = readCookie("platformCityId") || readCookie("mallCityId") || readCookie("cookieCityId") || readCookie("area");
+    //     }
+    //     if (cityId && cityId !== 999999 && cityId !== "999999") {
+    //         return cityId;
+    //     } else {
+    //         return '110100';
+    //     }
+    // }
+    // console.log(2);
+    // getCityId().then(cityId=>{
+    //     console.log(cityId);
+    // })
+
+    // console.log(1);
+    //
+    // async function getCityId() {
+    //     console.log(2);
+    //     await new Promise(resolve => {
+    //         setTimeout(function () {
+    //             console.log(3);
+    //             resolve('北京')
+    //         }, 3000)
+    //     })
+    //     console.log(4);
+    // }
+    // getCityId()
+    // console.log(3);
+
+    // console.log(3);
+    //
+    // // 1 2 3
+    // async function aa() {
+    //     await
+    // }
+    // aa()
+    // console.log(4);
+    // // 1324
+
+    // const s = new Set(['大事儿', '小事儿', '好事儿', '坏事儿'])
+    // console.log(s.size);
+    // s.add('糟心事')
+    // console.log(s);
+    // s.delete('糟心事')
+    // console.log(s);
+    // console.log(s.has('好事儿'));
+    // s.clear()
+    // console.log(s);
+
+    // let m = new Map()
+    // m.set('name', '周杰伦')
+    // m.set('change', function () {
+    //     console.log('唱歌');
+    // })
+    // console.log(m);
+    // m.delete('name')
+    // console.log(m);
+
+    // let arr = ['a', 'b', 'c']
+    //
+    // function f(param, index) {
+    //     if (index > arr.length) {
+    //
+    //     } else {
+    //         xiankuan(param).then(res => {
+    //             if (res.code === 0) {
+    //                 f(arr[index])
+    //             }
+    //         })
+    //     }
+    //
+    //
+    // }
+    //
+    // for (let i = 0; i < arr.length; i++) {
+    //     f(arr[i], i)
+    //
+    // }
+    //
+    // function a(param, i) {
+    //
+    //     if (i === arr.length) {
+    //
+    //     } else {
+    //         xiankuan(arr[0]).then(res => {
+    //             if (res.code === 0) {
+    //                 xiankuan(arr[1])
+    //             }
+    //         })
+    //     }
+    // }
 
 </script>
