@@ -7,10 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-<h1>test</h1>
+<div>---</div>
+<!--<h1>test</h1>-->
 <!--<button id="btn1">循环时间</button>-->
-<input type="number" id="ipt1">
-<button id="btn2">斐波那契数输出</button>
+<!--<input type="number" id="ipt1">-->
+<!--<button id="btn2">斐波那契数输出</button>-->
 </body>
 </html>
 <script>
@@ -347,22 +348,22 @@
     // })
 
     //promise封装ajax
-    const p = new Promise(function (resolve, reject) {
-        const xhr = new XMLHttpRequest();
-        xhr.open('GET', 'http://api.tianapi.com/topnews/index?key=6958c58f099535c47a0b927c61878cac')
-        xhr.send()
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4) {
-                if (xhr.status >= 200 && xhr.status < 300) {
-                    // console.log(xhr.response);
-                    resolve(xhr.response)
-                } else {
-                    // console.log('请求失败');
-                    reject('请求失败')
-                }
-            }
-        }
-    })
+    // const p = new Promise(function (resolve, reject) {
+    //     const xhr = new XMLHttpRequest();
+    //     xhr.open('GET', 'http://api.tianapi.com/topnews/index?key=6958c58f099535c47a0b927c61878cac')
+    //     xhr.send()
+    //     xhr.onreadystatechange = function () {
+    //         if (xhr.readyState === 4) {
+    //             if (xhr.status >= 200 && xhr.status < 300) {
+    //                 // console.log(xhr.response);
+    //                 resolve(xhr.response)
+    //             } else {
+    //                 // console.log('请求失败');
+    //                 reject('请求失败')
+    //             }
+    //         }
+    //     }
+    // })
     //
     // p.then((res) => {
     //     console.log(res);
@@ -516,4 +517,122 @@
     //     }
     // }
 
+    // function Phone(brand, price) {
+    //     this.brand = brand;
+    //     this.price = price
+    // }
+    //
+    // Phone.prototype.use = () => {
+    //     console.log('打电话');
+    // }
+    //
+    // let huawei = new Phone('华为', 5999)
+    // console.log(huawei.brand);
+    // console.log(huawei.price);
+    // huawei.use()
+    // console.log(huawei);
+
+    // class Phone {
+    //     constructor(brand, price) {
+    //         this.brand = brand;
+    //         this.price = price
+    //     }
+    //
+    //     use() {
+    //         console.log('打电话');
+    //     }
+    //
+    //     static a = 'A'
+    //
+    //     static fn() {
+    //         console.log('B-Fn');
+    //     }
+    //
+    // }
+
+    // let iphone = new Phone('苹果', 8999)
+    // console.log(iphone);
+    // console.log(typeof iphone);
+    // iphone.use()
+
+    // 对象的继承
+
+    // console.log(Object.is(3, 3));
+
+    // let a = {a: 'A', time: '33'}
+    // let b = {b: 'B', time: '44'}
+    // let c = {c: 'C'}
+    // console.log(Object.assign(a, b, c));
+
+    // const school = {name: '清华'}
+    // const city = {adress: '北京市'}
+    // Object.setPrototypeOf(school, city)
+    // console.log(school.adress);
+
+    // commonjs nodejs borwserify
+    // amd requirejs
+    // cmd seajs
+
+    // async function fn() {
+    //     console.log(1);
+    //     await new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             resolve('成功')
+    //             console.log(2);
+    //         }, 3333)
+    //     })
+    //     console.log(3);
+    // }
+    //
+    // const result = fn();
+    // result.then((res) => console.log(res))
+
+    // const p = new Promise((resolve, reject) => {
+    //     // resolve('成功返回了')
+    //     reject('失败了')
+    // })
+    //
+    // async function fn() {
+    //     try {
+    //         let result = await p;
+    //         return result;
+    //     } catch (e) {
+    //         console.log(e);
+    //     }
+    // }
+    //
+    // console.log(fn());
+    // fn().then(res => console.log(res))
+
+    // function ajax
+    // const school = {
+    //     name: '高中',
+    //     a: 'A',
+    //     b: 'B'
+    // }
+    //
+    // const obj={...school}
+    // console.log(obj)
+
+    // console.log(Object.keys(school));
+    // console.log(Object.values(school));
+    // console.log(Object.entries(school));
+    // const m=new Map(Object.entries(school))
+    // console.log(m);
+    // console.log(Object.getOwnPropertyDescriptors(school));
+
+    // class Person {
+    //     name;
+    //     age;
+    //     constructor(name, age) {
+    //         this.name = '张三';
+    //         this.age = 13;
+    //     }
+    // }
+    // 链式调用
+    // console.log(a?.b?.c?.d);
+    // import('./a.js').then(res=>{
+    //     console.log(res);
+    // })
 </script>
+
