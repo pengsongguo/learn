@@ -19,10 +19,10 @@ fs.open('helloFS2.txt', 'w', function (err, fd) {
 
             }
             //写入文件成功，关闭
-            fs.close(fd,function (err){
-                if(err){
+            fs.close(fd, function (err) {
+                if (err) {
 
-                }else {
+                } else {
                     console.log('关闭文件成功');
                 }
             })
