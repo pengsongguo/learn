@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue 学习</title>
+</head>
+
+<body>
+<div id="root">
+    数字：{{n}}
+    <br>
+    <button @click="jia">+</button>
+    <button @click="jian">-</button>
+</div>
+</body>
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.js"></script>
+<script>
+    Vue.config.productionTip = false;
+    var app = new Vue({
+        el: '#root',
+        data: {
+            n: 0
+        },
+        methods: {
+            jia() {
+                this.n += 1
+            },
+            jian() {
+                this.n -= 1
+            }
+        },
+        // watch: {
+        //     n:{
+        //         immediate:true,
+        //         handler(newVal,oldVal){
+        //             console.log(`新值-${newVal}`,`旧值-${oldVal}`);
+        //         }
+        //     }
+        // }
+    })
+    app.$watch('n',{
+        immediate:true,
+        handler(newVal,oldVal){
+            console.log(`新值-${newVal}`,`旧值-${oldVal}`);
+        }
+    })
+</script>
+
+</html>

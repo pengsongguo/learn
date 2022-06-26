@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    let n = 19;
+    let person = { name: '张三', sex: '男性' }
+    // person.age = 18;
+    // Object.defineProperty(person, 'age', {
+    //     value: 19,
+    //     enumerable: true,//是否可以枚举
+    //     writable: true,
+    //     configurable: true
+    // })
+
+
+    // person.age = 33;
+
+    // console.log(Object.keys(person))
+
+    // //    delete person.age
+    // console.info(person)
+
+    // person.age = n;
+    // n=20
+
+    Object.defineProperty(person, 'age', {
+        // value: n,
+        enumerable: true,
+        // writable: true,
+        // configurable: true,
+        get() {
+            console.log('读取 了age属性操作')
+            return n;
+        },
+        set(val) {
+            console.log('写入 了age属性操作')
+            n = val;
+        }
+    })
+
+    console.info(person)
+</script>
