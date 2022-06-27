@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue 学习</title>
+</head>
+<style>
+    .base {
+        width: 200px;
+        height: 200px;
+        border: 1px solid #000;
+        background-color: #fff;
+        border-radius: 0;
+        color: #000;
+        padding: 10px;
+    }
+
+    .gaoxing {
+        background-color: red;
+        border-radius: 20px;
+        color: #fff;
+    }
+
+    .beishang {
+        background-color: #000;
+        border-radius: 0px;
+        color: #fff;
+    }
+
+    .yiban {
+        background-color: #dde2e5;
+        border-radius: 10px;
+        color: #000;
+    }
+
+    .yanse1 {
+        background-color: #ae6767;
+    }
+
+    .yanse2 {
+        background-color: #1a99d0;
+    }
+
+    .yanse3 {
+        background-color: #be5e41;
+    }
+
+    /*形状*/
+    .yuanxing {
+        border-radius: 300px;
+    }
+
+    .xuxian {
+        border: 10px dashed red;
+    }
+</style>
+<body>
+<div id="root">
+    <!--    绑定class样式&#45;&#45;字符串写法，适用于：样式类名不确定，需要动态指定-->
+    <div class="base" :class="xinqing" @click="gaiBianXinQing">
+        {{name}}
+    </div>
+    <br>
+    <br>
+    <!--    绑定class样式 数组写法，适用于要绑定的样式格式不固定，名字也不固定-->
+    <div class="base" :class="yangshiArr">
+        {{name}}
+    </div>
+    <br>
+    <br>
+    <!--    绑定class样式 对象写法 要绑定的样式个数确定，名字也确定，但是要动态确定用不用-->
+    <div class="base" :class="yangshiObj">
+        {{name}}
+    </div>
+    <br>
+    <br>
+
+</div>
+</body>
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.js"></script>
+<script>
+    Vue.config.productionTip = false;
+    var app = new Vue({
+        el: '#root',
+        data: {
+            name: '文字1',
+            xinqing: 'gaoxing',
+            yangshiArr: ['yuanxing', 'xuxian', 'yanse3'],
+            yangshiObj: {
+                'yuanxing': false,
+                'xuxian': true,
+                'yanse2': false
+            }
+        },
+        methods: {
+            gaiBianXinQing() {
+                let xinQingArr = ['gaoxing', 'beishang', 'yiban']
+                this.xinqing = xinQingArr[Math.floor(Math.random() * 3)]
+            },
+
+        }
+    })
+</script>
+
+</html>

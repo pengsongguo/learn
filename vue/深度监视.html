@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue 学习</title>
+</head>
+
+<body>
+<div id="root">
+    <div>a:{{obj.a}}</div>
+    <div>b:{{obj.b}}</div>
+    <br>
+    <button @click="obj.a++">监视 a</button>
+    <button @click="obj.b++">监视 b</button>
+    <button @click="obj={a:999,b:888}">监视 Obj</button>
+    <button @click="obj.c=3">监视 obj里面的值</button>
+</div>
+</body>
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.js"></script>
+<script>
+    Vue.config.productionTip = false;
+    var app = new Vue({
+        el: '#root',
+        data: {
+            obj: {
+                a: 1,
+                b: 2
+            }
+        },
+        watch: {
+            // 'obj.a': {
+            //     handler() {
+            //         console.log('a');
+            //     }
+            // },
+            // 'obj.b': {
+            //     handler() {
+            //         console.log('b');
+            //     }
+            // },
+            // 'obj': {
+            //     handler() {
+            //         console.log('obj');
+            //     }
+            // },
+            // 'obj': {
+            //     deep: true,
+            //     handler() {
+            //         console.log('c');
+            //     }
+            // },
+            // 简写
+            'obj.a'(a,b){
+                console.log(a, b);
+            }
+        }
+    })
+</script>
+
+</html>

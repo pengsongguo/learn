@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div id="root">
+   <h1>{{title}}</h1>
+    <hr>
+    <div>学生：{{name}}</div>
+    <a :href="url">点击看车</a>
+    <a v-bind:href="url">买车</a>
+</div>
+
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    // 表达式：通俗理解是能够返回变量，可以赋值用的
+    // 语句：通俗理解就是语句，if else 等
+var v=new Vue({
+    el:'#root',
+    data: {
+        title:'学习vue',
+        name:'周杰伦',
+        url:'//autohome.com.cn'
+    }
+})
+</script>
+</body>
+</html>

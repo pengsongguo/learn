@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue 学习</title>
+</head>
+
+<body>
+<div id="root">
+    {{name}}
+    <br>
+    数组遍历
+    <ul>
+        <li v-for="(a,b) in personList" :key="b">
+            {{a.name}}--{{a.age}}
+        </li>
+    </ul>
+    <br>
+    对象遍历
+    <ul>
+        <li v-for="(a,b) in carInfo" :key="b">
+            {{a}}
+        </li>
+    </ul>
+    <br>
+    字符串遍历
+    <ul>
+        <li v-for="(a,b) in name">{{a}}</li>
+    </ul>
+    <br>
+    数量遍历
+    <ul>
+        <li v-for="(a,b) in 6">{{a}}</li>
+    </ul>
+    <br>
+</div>
+</body>
+
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.js"></script>
+<script>
+    Vue.config.productionTip = false;
+    var app = new Vue({
+        el: '#root',
+        data: {
+            name: '列表渲染',
+            personList:[
+                {
+                    name:'张三',
+                    age:18
+                },
+                {
+                    name:'张三',
+                    age:18
+                },
+                {
+                    name:'张三',
+                    age:18
+                },
+            ],
+            carInfo:{
+                brand:'奥迪',
+                price:'30万'
+            }
+        }
+    })
+    // 思考，面试题：循环遍历的key有啥用？
+    // key是vue需要用到的一个标识，用于进行diff运算时使用的，如果对于循环数据进行增删改查，vue会首先在虚拟dom中，进行diff运算，找到了对应的key值，则再对key值相同的虚拟dom内部进行对于，如果没有直接添加新的dom
+</script>
+
+</html>
