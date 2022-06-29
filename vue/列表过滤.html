@@ -5,12 +5,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>vue 学习</title>
+    <title>列表过滤</title>
 </head>
 
 <body>
 <div id="root">
     {{name}}
+    <br>
+    <hr>
+    <br>
+    <input type="text" v-model="keyWord">
+    <br>
+    <ul>
+        <li v-for="(val,index) in searchList" :key="val.id">
+            {{val.title}}
+        </li>
+    </ul>
 </div>
 </body>
 <!-- 开发环境版本，包含了有帮助的命令行警告 -->
@@ -20,7 +30,114 @@
     var app = new Vue({
         el: '#root',
         data: {
-            name: '文字1'
+            name: '新闻列表',
+            keyWord: '',
+            "newslist": [
+                {
+                    "id": "72b9b3b93aa28e538776d22c8ba55a1d",
+                    "ctime": "2022-06-26 20:07:32",
+                    "title": "一组动图警示你：今天国际禁毒日，远离毒品，拒绝毒驾！（3）",
+                    "description": "",
+                    "picUrl": "http://p3.toutiaoimg.com/img/tos-cn-i-qvj2lq49k0/ef7183417f7a4f73bdf26d483fddff06~tplv-tt-cs0:400:298.jpg",
+                    "url": "https://toutiao.com/group/7113452269835665935/",
+                    "source": "酒泉交警马鬃山大队"
+                },
+                {
+                    "id": "fb630be613a6b9b92e6ee465865df763",
+                    "ctime": "2022-06-26 20:15:02",
+                    "title": "\"纸吸管，想说爱你不容易\"？建议大家这样用",
+                    "description": "原标题：权威提醒，纸吸管，你应该这么用！在“限塑令”要求下餐饮企业纷纷将塑料吸管替换成纸质吸管但在使用中部分消费者却经常发出“纸吸管，想说爱你不容易”的叹息近期，四川省市场监督管理局针对一次性使用纸吸管产品开展了产品质量安全风险监测，并提醒消费者谨慎消费、安全使用。",
+                    "picUrl": "http://p26.toutiaoimg.com/img/tos-cn-i-tjoges91tu/T9rpuRzCojQMUw~tplv-tt-cs0:650:513.jpg",
+                    "url": "https://toutiao.com/group/7113529097128673827/",
+                    "source": "新湖南"
+                },
+                {
+                    "id": "75ac1e8ac2de975e8127c5bc617f4b0e",
+                    "ctime": "2022-06-26 20:30:02",
+                    "title": "《极限挑战》第八季首播，来了黄景瑜、杨超越、龚俊三位“新朋友”",
+                    "description": "6月26日，东方卫视励志体验综艺《极限挑战》第八季迎来首播。节目中，首发嘉宾王迅、岳云鹏、贾乃亮、郭京飞、黄明昊、黄景瑜、杨超越、龚俊，在海南三亚相会。",
+                    "picUrl": "http://p9.toutiaoimg.com/img/tos-cn-i-tjoges91tu/T9s9DUm8HWyOAH~tplv-tt-cs0:864:575.jpg",
+                    "url": "https://toutiao.com/group/7113551348419232292/",
+                    "source": "中国青年报"
+                },
+                {
+                    "id": "46383b2a290b6e63da4cfafb552823dc",
+                    "ctime": "2022-06-26 20:37:32",
+                    "title": "股份支付费用7亿！三一重工“太子”创业IPO，细数股权激励细节",
+                    "description": "树根互联股份有限公司2022年6月2日提交IPO申报，树根互联的实控人为梁在中，梁在中的父亲是三一集团的实控人梁稳根。",
+                    "picUrl": "http://p26.toutiaoimg.com/img/tos-cn-i-qvj2lq49k0/6be4fd12ee614b1c9adb457da5a1f5b4~tplv-tt-cs0:1282:854.jpg",
+                    "url": "https://toutiao.com/group/7113544519576076834/",
+                    "source": "人力资本俱乐部"
+                },
+                {
+                    "id": "3ac6833b09a77a717b53d8cc4a488078",
+                    "ctime": "2022-06-26 20:45:02",
+                    "title": "融创：“PR融创01”债券第二次分期支付存在较大不确定性",
+                    "description": "融创房地产集团有限公司6月24日发布公告称，公司应于2022年6月30日第二次分期支付“PR融创01”发行总额10%的本金及其对应利息。截至目前，公司面临短期较大的资金压力，预计无法于2022年6月30日前筹措到足额的分期偿付资金，拟对本期债券后续的还款节奏进行调整。",
+                    "picUrl": "",
+                    "url": "https://toutiao.com/group/7113523480977244708/",
+                    "source": "界面快讯"
+                },
+                {
+                    "id": "4c3dea272781c67f52fa61f8c67b91f3",
+                    "ctime": "2022-06-26 20:52:32",
+                    "title": "警惕！微信出现这个界面千万当心",
+                    "description": "使用微信转账时如果你的手机出现这个界面一定要提高警惕说明你当前支付存在巨大风险这15分钟，非常关键轻信卖家先付款货物没到人消失大学生小芳是个“购物狂”，平日闲着没事，就爱看购物直播。",
+                    "picUrl": "http://p6.toutiaoimg.com/img/tos-cn-i-tjoges91tu/T9lgY8i5KJBozb~tplv-tt-cs0:828:554.jpg",
+                    "url": "https://toutiao.com/group/7113540566113223205/",
+                    "source": "上观新闻"
+                },
+                {
+                    "id": "962f87823859987a0647a8e72cb553b7",
+                    "ctime": "2022-06-26 21:07:32",
+                    "title": "用阅读连接爱心与力量！阅读马拉松“开跑”",
+                    "description": "中国青年报客户端讯（王依玲 中青报·中青网记者林洁）6月25日，“读出趣味 读出爱”阅读马拉松活动在广州购书中心启动。从当天起，用户可以通过个人或团体的形式参与活动，使用小程序进行阅读打卡并积累阅读时长。",
+                    "picUrl": "http://p3.toutiaoimg.com/img/tos-cn-i-tjoges91tu/T9s9DRC8It4hKK~tplv-tt-cs0:800:489.jpg",
+                    "url": "https://toutiao.com/group/7113548820872593959/",
+                    "source": "中国青年报"
+                },
+                {
+                    "id": "46e278f34b65552cb971adb54f473c57",
+                    "ctime": "2022-06-26 21:15:02",
+                    "title": "外媒：拜登与朔尔茨会谈，向普京“炫耀”西方的团结",
+                    "description": "来源：环球网【环球网报道】七国集团（G7）峰会当地时间26日在德国开幕。综合法新社、俄罗斯塔斯社报道，美国总统拜登在峰会开始前与德国总理朔尔茨会谈时称，俄罗斯总统普京一直希望“北约和G7以某种方式分裂”，“但我们没有分裂，将来也不会分裂”。",
+                    "picUrl": "http://p3.toutiaoimg.com/img/tos-cn-i-tjoges91tu/T9sAz01B0rrZwj~tplv-tt-cs0:1185:245.jpg",
+                    "url": "https://toutiao.com/group/7113550616684659232/",
+                    "source": "环球网"
+                },
+                {
+                    "id": "1b1c342128919cd1bd16d71b1e8e6b89",
+                    "ctime": "2022-06-26 21:37:32",
+                    "title": "人民城市 青春力量丨让青年成为社区智库，常态化参与社区治理",
+                    "description": "人民城市建设、现代社区治理离不开青年的参与。尤其在刚刚过去的大上海保卫战中，有一群青年人走出了家门、扛起了重任，为守护自己的家园，贡献出自己的一份力量。",
+                    "picUrl": "http://p9.toutiaoimg.com/img/tos-cn-i-tjoges91tu/T9rrc8RH6zpEQ9~tplv-tt-cs0:640:480.jpg",
+                    "url": "https://toutiao.com/group/7113530799751856680/",
+                    "source": "青年报"
+                },
+                {
+                    "id": "cc388261e8a7f7f195e1facef43f0612",
+                    "ctime": "2022-06-26 21:45:02",
+                    "title": "《声生不息·港乐季》“共此时”专场，歌声里有25载“光辉岁月”",
+                    "description": "6月26日，正在热播的音乐综艺节目《声生不息·港乐季》，推出港乐与我“共此时”专场。香港与内地艺人共同唱响港乐经典，在歌声里重温回归时的难忘画面。",
+                    "picUrl": "http://p3.toutiaoimg.com/img/tos-cn-i-tjoges91tu/T9s9DEnDBjgAWG~tplv-tt-cs0:800:533.jpg",
+                    "url": "https://toutiao.com/group/7113548953865585167/",
+                    "source": "中国青年报"
+                }
+            ],
+            // searchList: []
+        },
+        // watch:{
+        //     keyWord:{
+        //         immediate: true,
+        //         handler(newVal, oldVal) {
+        //             this.searchList=this.newslist.filter((v,i)=>v.title.includes(newVal))
+        //         }
+        //     }
+        // }
+        computed: {
+            searchList() {
+                return this.newslist.filter((v, i) => v.title.includes(this.keyWord))
+            }
         }
     })
 </script>
