@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>promise封装ajax</title>
+</head>
+<body>
+<h6>promise封装ajax</h6>
+</body>
+</html>
+<script>
+
+    function sendAjax(url) {
+        return new Promise(function (resolve, reject) {
+            const xhr = new XMLHttpRequest();
+            xhr.responseType = 'json'
+            xhr.open('get', url)
+            xhr.send()
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        resolve(xhr.response)
+                    } else {
+                        reject('404')
+                    }
+                }
+            }
+        })
+    }
+
+    sendAjax('http://api.tianapi.com/topnews/index?key=6958c58f099535c47a0b927c61878cac').then((res) => {
+        if(res.code===200){
+            console.log(res.newslist);
+        }else {
+            console.warn('失败')
+        }
+    })
+    console.log(sendAjax('http://api.tianapi.com/topnews/index?key=6958c58f099535c47a0b927c61878cac'));
+</script>

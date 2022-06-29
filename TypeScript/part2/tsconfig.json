@@ -1,0 +1,23 @@
+{
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "./src/lib"
+  ],
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "ES2015",
+    "outDir": "./dist",
+    // "outFile": "./dist/app.js",
+    "allowJs": true,
+    //是否检查JavaScript规范
+    "checkJs": false,
+    //是否移除注释
+    "removeComments": true,
+    // 不生成编译后的文件
+    "noEmit": false,
+    //当有错误的时候不生成编译文件
+    "noEmitOnError": false
+  }
+}

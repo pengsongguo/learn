@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bug时效</title>
+</head>
+<body>
+<div id="root">
+    开始：<input type="text" v-model="a">
+    <br>
+    结束：<input type="text" v-model="b">
+    <br>
+    结果：<input type="text" :value="jieguo">
+</div>
+</body>
+<script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.common.dev.js"></script>
+<script>
+    let app = new Vue({
+        el: '#root',
+        data: {
+            a: '',
+            b: ''
+        },
+        computed: {
+            jieguo() {
+                let n1 = new Date(String(this.a))
+                let n2 = new Date(String(this.b))
+                let tmp = Math.abs(n1 - n2) / 1000 / 60 / 60 / 24
+
+                return Math.round(tmp * 10) / 10
+            }
+        }
+    })
+</script>
+</html>

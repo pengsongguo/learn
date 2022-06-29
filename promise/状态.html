@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h2>22</h2>
+</body>
+</html>
+<script>
+    // const p = new Promise((resolve, reject) => {
+    //     setTimeout(reject('OK'), 5555)
+    // })
+    // console.log(p);
+
+    // const p=Promise.resolve(new Promise((resolve, reject) => {
+    //     resolve('ok')
+    // }))
+    // console.log(p);
+
+    // const p = Promise.reject('error')
+    // console.log(p);
+    // p.catch((data) => {
+    //     console.log(data);
+    // })
+
+    const p1 = new Promise((resolve, reject) => {
+        resolve('ok')
+    })
+    const p2 = Promise.resolve('成功222')
+    const p3 = Promise.resolve('获取到了数据333')
+
+    const p4 = Promise.all([p1, p2, p3])
+    console.log(p4);
+    p4.then((res) => {
+        console.log(res);
+    })
+
+</script>
