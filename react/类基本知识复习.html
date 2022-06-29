@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>react 类复习</title>
+</head>
+
+<body>
+<div id="root">
+    类复习，控制台
+</div>
+</body>
+
+<script>
+    // 声明一个类
+    class Person {
+        constructor(name, age) {
+            this.name = name
+            this.age = age
+        }
+
+        speak() {
+            console.log(`我是${this.name},我今年${this.age}岁`);
+        }
+    }
+
+    let p1 = new Person('郭鹏松', 31)
+    let p2 = new Person('郭今阳', 1)
+    console.log(p1);
+    console.log(p2);
+
+    class Student extends Person {
+        constructor(name, age, grade) {
+            super(name, age);
+            this.grade = grade
+        }
+
+        sayHi() {
+            console.log(`我是${this.name},我今年${this.age}岁，我是${this.grade}年级学生`);
+        }
+    }
+
+    let s1 = new Student('郭今阳', 5, '小学一年级')
+    console.log(s1);
+    s1.sayHi()
+</script>
+
+</html>
