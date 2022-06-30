@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>react 学习</title>
+    <title>react setSate</title>
 </head>
 
 <body>
@@ -18,24 +18,30 @@
 <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
 <script src="https://cdn.bootcdn.net/ajax/libs/babel-standalone/6.10.3/babel.js"></script>
 <script type="text/babel">
-    class Demo extends React.Component {
-        state = {}
+    class Weather extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {
+                isHot: true
+            }
+        }
 
-        fn = () => {
-            console.log('fn');
+        change() {
+            this.setState({
+                isHot: !this.state.isHot
+            })
         }
 
         render() {
-            const {} = this.state;
-            return (<div>
-
-
+            const {isHot} = this.state;
+            return (<div onClick={this.change.bind(this)}>
+                今天天气{isHot ? '炎热' : '凉爽'}
             </div>)
         }
 
     }
 
-    ReactDOM.render(<Demo/>, document.getElementById('root'))
+    ReactDOM.render(<Weather/>, document.getElementById('root'))
 </script>
 
 </html>

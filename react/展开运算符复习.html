@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>展开运算符</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let person = {
+        name: '周姐姐',
+        age: 19,
+        sex: '女'
+    }
+
+    let p2 = {...person}
+    console.log(p2);
+    person.name = '战鼓额'
+    let p3 = {...person, name: '郭富城'}
+    console.log(p3);
+</script>
