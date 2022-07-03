@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>react 学习</title>
+</head>
+
+<body>
+<div id="root">
+
+</div>
+</body>
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.bootcdn.net/ajax/libs/react/17.0.2/umd/react.development.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/react-dom/17.0.2/umd/react-dom.development.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/babel-standalone/6.10.3/babel.js"></script>
+<script type="text/babel">
+    class Demo extends React.Component {
+        constructor(props) {
+            super(props);
+            console.log('1————构造器挂载');
+            this.state = {
+                n: 0
+            }
+        }
+
+        componentWillMount() {
+            console.log('2————组件将要挂载');
+        }
+
+        componentDidMount() {
+            console.log('4————挂载结束');
+        }
+
+        shouldComponentUpdate(){
+            console.log('该更新？');
+            return true
+        }
+
+        componentWillUpdate(){
+            console.log('组件————componentWillUpdate');
+        }
+
+        componentDidUpdate(){
+            console.log('组件————componentDidUpdate');
+        }
+
+        add = () => {
+            this.setState({
+                n: this.state.n + 1
+            })
+        }
+
+        render() {
+            const {n} = this.state;
+            console.log('3————组件render');
+            return (<div>
+                <h1>当前值：{n}</h1>
+                <br/>
+                <button onClick={this.add}>点击加 1</button>
+                <br/>
+                <button>强制更新</button>
+
+            </div>)
+        }
+
+    }
+    ReactDOM.render(<Demo/>, document.getElementById('root'))
+</script>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>react 非受控组件</title>
+</head>
+
+<body>
+<div id="root">
+
+</div>
+</body>
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/babel-standalone/6.10.3/babel.js"></script>
+<script type="text/babel">
+    class Demo extends React.Component {
+        state = {}
+
+        handleSubmit = (e) => {
+            e.preventDefault()
+            const {ipt1, ipt2} = this;
+            alert(`你输入的姓名：${ipt1.value}，密码：${ipt2.value}`)
+        }
+
+        render() {
+            const {} = this.state;
+            return (<div>
+                <form action="www.baidu.com" onSubmit={this.handleSubmit}>
+                    姓名:
+                    <input type="text" ref={(currentNode) => this.ipt1 = currentNode} name="userName"/>
+                    <br/>
+                    密码：
+                    <input type="password" ref={(currentNode) => this.ipt2 = currentNode} name="pasword"/>
+                    <br/>
+                    <button>登录</button>
+                </form>
+
+            </div>)
+        }
+
+    }
+
+    ReactDOM.render(<Demo/>, document.getElementById('root'))
+</script>
+
+</html>
